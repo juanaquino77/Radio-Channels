@@ -1,0 +1,31 @@
+{
+  "name": "Radio-Channels",
+  "version": "0.0.1",
+  "description": "Proyecto final del bootcamp de globant 2015",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juanaquino77/Radio-Channels.git"
+  },
+  "keywords": [
+    "bootcamp",
+    "globant",
+    "radio",
+    "channels"
+  ],
+  "author": "Juan Manuel Rodriguez y Juan Aquino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanaquino77/Radio-Channels/issues"
+  },
+  "homepage": "https://github.com/juanaquino77/Radio-Channels",
+  "devDependencies": {
+    "bootstrap": "^3.3.4"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.4"
+  }
+}
