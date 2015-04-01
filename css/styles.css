@@ -1,1 +1,94 @@
-styles.css
+body {
+	margin: 0;
+}
+.root {
+	background-color: #212737;
+	position: relative;
+}
+ .header {
+	height: 64px;
+	width: 100%;
+	min-width: 320px;
+	top: 0;
+	display: block;
+	z-index: 2;
+	position: relative;
+	background: #3165ae;
+} 
+.page-wrap {
+	height: 1000px;
+	position: relative;
+}
+.side {
+	background-color: #151c26;
+	height: 100%;
+	color: #44556f;
+	top: 0;
+	width: 180px;
+	position: absolute;
+
+}
+.fixed {
+	position: fixed;
+}
+.content {
+	background-color: #212737;
+	color: white;
+	border-left: 180px solid #B60202;
+	padding: 30px 2%;
+}
+.topBar {
+	border-bottom: 1px solid #4a5068;
+}
+.topBar h2 {
+	font-size: 20px;
+	line-height: 30px;
+	display: inline-block;
+	color: #fefefe;
+	text-transform: uppercase;
+	margin: 0 50px 0 0;
+}
+.menu {
+	display: inline-block;
+	color: #9ba5c5;
+	cursor: pointer;
+	margin: 0;
+
+}
+.type {
+	border-bottom: 3px solid transparent;
+	padding: 0 1em;
+}
+.active {
+	color: #fefefe;
+	padding-bottom: 3px; 
+	border-bottom: #288cfb 3px solid;
+	background-image: -webkit-linear-gradient(bottom, rgba(40, 140, 251, 0.67),rgba(40, 140, 251, 0.5) 10%,rgba(40, 140, 251, 0.06) 50%);
+}
+.filter-buttons {
+	margin: 1.5em 0;
+	font-size: 11px;
+}
+.nav-active {
+	color: #288cfb;
+	padding-bottom: 3px; 
+	border-left: #288cfb 3px solid;
+    background-image: -webkit-linear-gradient(left, rgba(40, 140, 251, 0.28),rgba(39, 140, 251, 0.22) 10%,rgba(40, 140, 251, 0) 50%);
+}
+.views {
+	color: #44556f;
+	float: right;
+	display: inline-block;
+	cursor: default;
+}
+.views i {
+	cursor: pointer;
+	font-size: 18px;
+	margin-right: 10px;
+}
+.views i:hover {
+	color: #288cfb;
+}
+.view-active {
+	color: #288cfb;
+}
