@@ -1,0 +1,16 @@
+<nav class="filter-buttons">	
+	<button type="button" class="btn btn-default all botoncito" value="all">all</button>
+	<button type="button" class="btn btn-default new botoncito" value="new">new</button>
+	<button type="button" class="botoncito btn btn-default trance" value="trance">trance</button>
+	<button type="button" class="btn btn-default dance botoncito" value="dance">dance</button>
+	<button type="button" class="btn btn-default house botoncito" value="house">house</button>
+	<button type="button" class="btn btn-default lounge botoncito" value="lounge">lounge</button>
+	<button type="button" class="btn btn-default chilout botoncito" value="chilout">chilout</button>
+	<button type="button" class="btn btn-default techno botoncito" value="techno">techno</button>
+	<button type="button" class="btn btn-default bass botoncito" value="bass">bass</button>
+	<button type="button" class="btn btn-default bass botoncito" value="ambient">ambient</button>
+	<button type="button" class="btn btn-default deep botoncito" value="deep">deep</button>
+	<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button>
+	<button type="button" class="btn btn-default vocal botoncito" value="vocal">vocal</button>
+	<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button>
+</nav>

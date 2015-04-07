@@ -1,3 +1,5 @@
+var coleccion = require('./radioCollection');
+var vista = require('./radiosView');
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
     if (scroll >= 64) {
@@ -22,3 +24,4 @@ $('.nav li').click(function(){
 	$(this).addClass('nav-active');
 	return false;
 })
+

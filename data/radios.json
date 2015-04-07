@@ -16,7 +16,6 @@
 		"description" : "description",
 		"genre" : ["chillout", "ambient"],
 		"dateCreate" : "dateCreate"
-
 	},
 	{
 		"id" : 3,
@@ -26,16 +25,159 @@
 		"description" : "description",
 		"genre" : ["dance", "house", "bass"],
 		"dateCreate" : "dateCreate"
-
 	},
 	{
 		"id" : 4,
-		"name" : "Bassline",
+		"name" : "Big Beat",
 		"frequency" : "frequency",
 		"image" : "image",
 		"description" : "description",
-		"genre" : ["bass", "vocal"],
+		"genre" : ["bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 5,
+		"name" : "Big Room House",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "vocal", "hard"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 6,
+		"name" : "Breaks",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 7,
+		"name" : "ChillHop",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 8,
+		"name" : "Chillout",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 9,
+		"name" : "Chillout Dreams",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 10,
+		"name" : "Chillstep",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
 		"dateCreate" : "dateCreate"
 
+	},
+	{
+		"id" : 11,
+		"name" : "Classic Eurodance",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 12,
+		"name" : "Classic Eurodisco",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 13,
+		"name" : "Classic Trance",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 14,
+		"name" : "Classic Vocal Trance",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 15,
+		"name" : "Club Dubstep",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 16,
+		"name" : "Club Sounds",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 17,
+		"name" : "Dj Mixes",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 18,
+		"name" : "Dark Dnb",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 19,
+		"name" : "Dark Psytrance",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 20,
+		"name" : "Deep House",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
 	}
 ]

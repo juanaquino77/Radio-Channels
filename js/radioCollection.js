@@ -8,4 +8,4 @@ radioCollection = Backbone.Collection.extend ({
 	}
 });
 
-module.exports = radioCollection;
+module.exports = radioCollection;	

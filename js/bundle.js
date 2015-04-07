@@ -1,5 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var coleccion = require('./radioCollection');
+var vista = require('./radiosView');
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
     if (scroll >= 64) {
@@ -24,7 +25,7 @@ $('.nav li').click(function(){
 	$(this).addClass('nav-active');
 	return false;
 })
-$('.filter-buttons button').click(function() {
+/*$('.filter-buttons button').click(function() {
 			var radios = new coleccion();
 			var genero = this.value;
 			$(".radios").html("");
@@ -35,18 +36,14 @@ $('.filter-buttons button').click(function() {
 	          			if(_.indexOf(arr.genre, genero) !== -1) 
 	          			return arr
 	        		});
-              		_.each(match, function(array) {
-                		$(".radios").append("" +  array.name +  "</br> ");
-              		})
+              		new vista({collection:match});
         		}
         		else
-          			_.each(data, function(array) {
-            			$(".radios").append("" +  array.name +  "</br> ");
-          			})
+                	new vista({collection:data});
 	    	})
-})
+})*/
 
-},{"./radioCollection":3}],2:[function(require,module,exports){
+},{"./radioCollection":3,"./radiosView":6}],2:[function(require,module,exports){
 window.$ = require('jquery');
 window._ = require("underscore")
 window.Backbone = require('backbone');
@@ -58,7 +55,7 @@ var appRouter = new Router();
 Backbone.history.start();
 
 
-},{"./router":5,"backbone":8,"jquery":9,"underscore":10}],3:[function(require,module,exports){
+},{"./router":7,"backbone":10,"jquery":11,"underscore":12}],3:[function(require,module,exports){
 var radio = require('./radioStation')
 
 
@@ -69,7 +66,7 @@ radioCollection = Backbone.Collection.extend ({
 	}
 });
 
-module.exports = radioCollection;
+module.exports = radioCollection;	
 },{"./radioStation":4}],4:[function(require,module,exports){
 var canciones = require('./songCollection')
 
@@ -84,28 +81,102 @@ radioStation = Backbone.Model.extend ({
 });
 
 module.exports = radioStation;
-},{"./songCollection":7}],5:[function(require,module,exports){
+},{"./songCollection":9}],5:[function(require,module,exports){
+
+//radioTemplate = _.template($('#radioTemplate').html());
+
+radioView = Backbone.View.extend({
+	tagName: "li",
+  // 	template: radioTemplate,
+    initialize: function(){
+    },
+	render : function(){
+		//return $(this.el).append(this.template(this.model.toJSON())) 
+	}
+})
+
+module.exports = radioView;
+},{}],6:[function(require,module,exports){
+var radioView = require('./radioView');
+//radiosTemplate = _.template($('#radiosTemplate').html());
+
+	var radiosView = Backbone.View.extend({
+		el: $('.radios'),
+		//template: radiosTemplate,
+
+
+		events: {
+		    "click button.botoncito" : "filtro"
+/*		    "dblclick .view"  : "edit",
+		    "click a.destroy" : "clear",
+		    "keypress .edit"  : "updateOnEnter",
+		    "blur .edit"      : "close"*/
+		    },
+
+		initialize: function() {
+        	//this.collection.bind("reset", this.render(), this);
+			//this.collection.bind("add", this.addOne, this);
+			//_.bindAll(this);
+			this.render();
+			//this.collection.bind("click", this.filtro(), this)
+		},
+	    
+	    filtro: function() {
+    		console.log("this");
+    	},
+
+	    render: function() {
+/*			$.getJSON('data/peliculasJson.json', function(data){
+				var template = $('#movie_template').html();
+				var html = Handlebars.compile(template);
+				var listo = html(data);
+				$('.item').html(listo);
+			});*/
+        	_.each(this.collection, function(num){
+            	$('.radios').append(num.name + "<br>")
+            })
+            //$(this.el).html(this.template());
+            //this.addAll();
+	    }, 
+
+    	/*addAll: function () {
+        	console.log("addAll")
+        	//this.collection.each(this.addOne);
+    	},*/
+	/*    addOne: function (model) {
+	        console.log("addOne")
+	        view = new radioView({ model: model });
+	        $("ul", this.el).append(view.render());
+	    },*/
+
+	});
+
+	module.exports = radiosView;
+	
+
+},{"./radioView":5}],7:[function(require,module,exports){
 var coleccion = require('./radioCollection');
+var vista = require('./radiosView');
 var addClass = require("./addFixed");
+var RadioChannelsList = new coleccion();
+
 
 Router = Backbone.Router.extend({
     	routes: {
-        	"": "defaultRoute" 
+        	"": "defaultRoute",
+            "nuevos": "new"           
     	},
-
     	defaultRoute: function() {
-			var radios = new coleccion();
-			radios.fetch()
+			RadioChannelsList.fetch()
 			.success(function(data) {
-            	_.each(data, function(array){
-            		$(".radios").append("" +  array.name +  "</br> ");
-            	})
+                new vista({collection:data});
 	     	});
-    	}
+    	},
+        new: function() {
+        }
 })
-
 module.exports = Router;
-},{"./addFixed":1,"./radioCollection":3}],6:[function(require,module,exports){
+},{"./addFixed":1,"./radioCollection":3,"./radiosView":6}],8:[function(require,module,exports){
 Song = Backbone.Model.extend ({
 
     defaults : {
@@ -115,7 +186,7 @@ Song = Backbone.Model.extend ({
 });
 
 module.exports = Song;
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var song = require('./song')
 
 
@@ -129,7 +200,7 @@ Songs = Backbone.Collection.extend ({
 module.exports = Songs;
 
 
-},{"./song":6}],8:[function(require,module,exports){
+},{"./song":8}],10:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -1739,7 +1810,7 @@ module.exports = Songs;
 
 }));
 
-},{"underscore":10}],9:[function(require,module,exports){
+},{"underscore":12}],11:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
@@ -10946,7 +11017,7 @@ return jQuery;
 
 }));
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 //     Underscore.js 1.8.2
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

@@ -1,20 +1,22 @@
 var coleccion = require('./radioCollection');
+var vista = require('./radiosView');
 var addClass = require("./addFixed");
+var RadioChannelsList = new coleccion();
+
 
 Router = Backbone.Router.extend({
     	routes: {
-        	"": "defaultRoute" 
+        	"": "defaultRoute",
+            "nuevos": "new"           
     	},
-
     	defaultRoute: function() {
-			var radios = new coleccion();
-			radios.fetch()
+			RadioChannelsList.fetch()
 			.success(function(data) {
-            	_.each(data, function(array){
-            		$(".radios").append("" +  array.name +  "</br> ");
-            	})
+                new vista({collection:data});
 	     	});
-    	}
+    	},
+        new: function() {
+            
+        }
 })
-
 module.exports = Router;
