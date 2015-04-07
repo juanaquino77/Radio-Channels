@@ -1,4 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var coleccion = require('./radioCollection');
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
     if (scroll >= 64) {
@@ -23,15 +24,112 @@ $('.nav li').click(function(){
 	$(this).addClass('nav-active');
 	return false;
 })
+$('.filter-buttons button').click(function() {
+			var radios = new coleccion();
+			var genero = this.value;
+			$(".radios").html("");
+			radios.fetch()
+			.success(genero, function(data) {
+				if(genero != "all") {	
+	        		var match = _.filter(data, function(arr) { 
+	          			if(_.indexOf(arr.genre, genero) !== -1) 
+	          			return arr
+	        		});
+              		_.each(match, function(array) {
+                		$(".radios").append("" +  array.name +  "</br> ");
+              		})
+        		}
+        		else
+          			_.each(data, function(array) {
+            			$(".radios").append("" +  array.name +  "</br> ");
+          			})
+	    	})
+})
 
-},{}],2:[function(require,module,exports){
+},{"./radioCollection":3}],2:[function(require,module,exports){
 window.$ = require('jquery');
 window._ = require("underscore")
 window.Backbone = require('backbone');
 Backbone.$ = $;
-window.addClass = require("./addFixed.js");
+var Router = require('./router');
 
-},{"./addFixed.js":1,"backbone":3,"jquery":4,"underscore":5}],3:[function(require,module,exports){
+
+var appRouter = new Router();
+Backbone.history.start();
+
+
+},{"./router":5,"backbone":8,"jquery":9,"underscore":10}],3:[function(require,module,exports){
+var radio = require('./radioStation')
+
+
+radioCollection = Backbone.Collection.extend ({
+	model : radio,
+	url : 'data/radios.json',
+	initialize : function() {
+	}
+});
+
+module.exports = radioCollection;
+},{"./radioStation":4}],4:[function(require,module,exports){
+var canciones = require('./songCollection')
+
+
+radioStation = Backbone.Model.extend ({
+
+    defaults : {
+        frequency : '',
+        name : '',
+        logo : ''
+    }
+});
+
+module.exports = radioStation;
+},{"./songCollection":7}],5:[function(require,module,exports){
+var coleccion = require('./radioCollection');
+var addClass = require("./addFixed");
+
+Router = Backbone.Router.extend({
+    	routes: {
+        	"": "defaultRoute" 
+    	},
+
+    	defaultRoute: function() {
+			var radios = new coleccion();
+			radios.fetch()
+			.success(function(data) {
+            	_.each(data, function(array){
+            		$(".radios").append("" +  array.name +  "</br> ");
+            	})
+	     	});
+    	}
+})
+
+module.exports = Router;
+},{"./addFixed":1,"./radioCollection":3}],6:[function(require,module,exports){
+Song = Backbone.Model.extend ({
+
+    defaults : {
+        title : '',
+        album : ''
+    }
+});
+
+module.exports = Song;
+},{}],7:[function(require,module,exports){
+var song = require('./song')
+
+
+Songs = Backbone.Collection.extend ({
+	model : song,
+	url : 'data/data.json',
+	initialize : function() {
+	}
+});
+
+module.exports = Songs;
+
+
+},{"./song":6}],8:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -1641,7 +1739,7 @@ window.addClass = require("./addFixed.js");
 
 }));
 
-},{"underscore":5}],4:[function(require,module,exports){
+},{"underscore":10}],9:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
@@ -10848,7 +10946,7 @@ return jQuery;
 
 }));
 
-},{}],5:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 //     Underscore.js 1.8.2
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

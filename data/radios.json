@@ -1,0 +1,41 @@
+[
+	{
+		"id" : 1,
+		"name" : "00'sClubHits",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "classic"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 2,
+		"name" : "Ambient",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["chillout", "ambient"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 3,
+		"name" : "Bass&Jackin'House",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["dance", "house", "bass"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 4,
+		"name" : "Bassline",
+		"frequency" : "frequency",
+		"image" : "image",
+		"description" : "description",
+		"genre" : ["bass", "vocal"],
+		"dateCreate" : "dateCreate"
+
+	}
+]

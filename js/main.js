@@ -2,4 +2,9 @@ window.$ = require('jquery');
 window._ = require("underscore")
 window.Backbone = require('backbone');
 Backbone.$ = $;
-window.addClass = require("./addFixed.js");
+var Router = require('./router');
+
+
+var appRouter = new Router();
+Backbone.history.start();
+
