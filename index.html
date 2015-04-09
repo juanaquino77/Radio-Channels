@@ -87,22 +87,18 @@
 				<button type="button" class="btn btn-default vocal botoncito" value="vocal">vocal</button>
 				<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button>
 			</nav>
-			<div class="radios">	
-				
+			<div class="radiosContainer row">	
 			</div>
 			<script type="text/template" id="radiosTemplate">
-		        <ul>
+		        <ul class="bigList">
+
 		        </ul>
 		    </script>
 		    <script type="text/template" id="radioTemplate">
-				<div>******************************************</div>
-				<div><%= id %> </div>
-				<div><%= title %> </div>
-				<div><%= director %> </div>
-				<div><%= duration %> </div>
-				<img src='images/<%= image %>.jpg'> </img>
-				<div><%= year %> </div>
-				<div><%= description %> </div>
+
+				<img class="image"src='img/<%= id %>.png'> </img>
+				<div class="name"><%= name %> </div>
+				<div class="playing"><%= "" %>Now Playing </div>
 		    </script>
 		</div>
 	  </div>

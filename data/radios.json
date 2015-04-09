@@ -3,7 +3,7 @@
 		"id" : 1,
 		"name" : "00'sClubHits",
 		"frequency" : "frequency",
-		"image" : "image",
+		"image" : "0ClubHits",
 		"description" : "description",
 		"genre" : ["dance", "house", "classic"],
 		"dateCreate" : "dateCreate"
@@ -12,7 +12,7 @@
 		"id" : 2,
 		"name" : "Ambient",
 		"frequency" : "frequency",
-		"image" : "image",
+		"image" : "Ambient",
 		"description" : "description",
 		"genre" : ["chillout", "ambient"],
 		"dateCreate" : "dateCreate"
@@ -21,7 +21,7 @@
 		"id" : 3,
 		"name" : "Bass&Jackin'House",
 		"frequency" : "frequency",
-		"image" : "image",
+		"image" : "Bass&Jackin",
 		"description" : "description",
 		"genre" : ["dance", "house", "bass"],
 		"dateCreate" : "dateCreate"
@@ -30,7 +30,7 @@
 		"id" : 4,
 		"name" : "Big Beat",
 		"frequency" : "frequency",
-		"image" : "image",
+		"image" : "BigBeat",
 		"description" : "description",
 		"genre" : ["bass"],
 		"dateCreate" : "dateCreate"
@@ -39,7 +39,7 @@
 		"id" : 5,
 		"name" : "Big Room House",
 		"frequency" : "frequency",
-		"image" : "image",
+		"image" : "BigRoomHouse",
 		"description" : "description",
 		"genre" : ["dance", "house", "vocal", "hard"],
 		"dateCreate" : "dateCreate"

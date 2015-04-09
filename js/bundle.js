@@ -25,23 +25,7 @@ $('.nav li').click(function(){
 	$(this).addClass('nav-active');
 	return false;
 })
-/*$('.filter-buttons button').click(function() {
-			var radios = new coleccion();
-			var genero = this.value;
-			$(".radios").html("");
-			radios.fetch()
-			.success(genero, function(data) {
-				if(genero != "all") {	
-	        		var match = _.filter(data, function(arr) { 
-	          			if(_.indexOf(arr.genre, genero) !== -1) 
-	          			return arr
-	        		});
-              		new vista({collection:match});
-        		}
-        		else
-                	new vista({collection:data});
-	    	})
-})*/
+
 
 },{"./radioCollection":3,"./radiosView":6}],2:[function(require,module,exports){
 window.$ = require('jquery');
@@ -82,73 +66,48 @@ radioStation = Backbone.Model.extend ({
 
 module.exports = radioStation;
 },{"./songCollection":9}],5:[function(require,module,exports){
-
-//radioTemplate = _.template($('#radioTemplate').html());
+radioTemplate = _.template($('#radioTemplate').html());
 
 radioView = Backbone.View.extend({
-	tagName: "li",
-  // 	template: radioTemplate,
+	tagName: 'li',
+   	template: radioTemplate,
     initialize: function(){
+    	this.render();
     },
 	render : function(){
-		//return $(this.el).append(this.template(this.model.toJSON())) 
+		return $(this.el).html(this.template(this.model)) 
 	}
 })
 
 module.exports = radioView;
 },{}],6:[function(require,module,exports){
 var radioView = require('./radioView');
-//radiosTemplate = _.template($('#radiosTemplate').html());
 
-	var radiosView = Backbone.View.extend({
-		el: $('.radios'),
-		//template: radiosTemplate,
+radiosTemplate = _.template($('#radiosTemplate').html());
 
-
-		events: {
-		    "click button.botoncito" : "filtro"
-/*		    "dblclick .view"  : "edit",
-		    "click a.destroy" : "clear",
-		    "keypress .edit"  : "updateOnEnter",
-		    "blur .edit"      : "close"*/
-		    },
+	radiosView = Backbone.View.extend({
+		el: $('.radiosContainer'),
+		template: radiosTemplate,
 
 		initialize: function() {
-        	//this.collection.bind("reset", this.render(), this);
-			//this.collection.bind("add", this.addOne, this);
-			//_.bindAll(this);
+			contexto = this;
 			this.render();
-			//this.collection.bind("click", this.filtro(), this)
 		},
 	    
-	    filtro: function() {
-    		console.log("this");
+	    filter: function() {
     	},
 
 	    render: function() {
-/*			$.getJSON('data/peliculasJson.json', function(data){
-				var template = $('#movie_template').html();
-				var html = Handlebars.compile(template);
-				var listo = html(data);
-				$('.item').html(listo);
-			});*/
-        	_.each(this.collection, function(num){
-            	$('.radios').append(num.name + "<br>")
-            })
-            //$(this.el).html(this.template());
-            //this.addAll();
+	        $(this.el).html(this.template());
+            this.addAll();
 	    }, 
-
-    	/*addAll: function () {
-        	console.log("addAll")
-        	//this.collection.each(this.addOne);
-    	},*/
-	/*    addOne: function (model) {
-	        console.log("addOne")
+    	addAll: function () {
+			_.each(this.collection, this.addOne)
+    	},
+	    addOne: function (model) { 
 	        view = new radioView({ model: model });
-	        $("ul", this.el).append(view.render());
-	    },*/
-
+	        $("ul", contexto.el).append(view.render());  
+	    },
 	});
 
 	module.exports = radiosView;
@@ -173,6 +132,7 @@ Router = Backbone.Router.extend({
 	     	});
     	},
         new: function() {
+            
         }
 })
 module.exports = Router;

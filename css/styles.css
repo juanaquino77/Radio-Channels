@@ -92,3 +92,18 @@ body {
 .view-active {
 	color: #288cfb;
 }
+ul{
+	list-style: none;
+}
+.row li{
+	float: left;
+	margin: 10px;
+	text-align: center;
+	width: 12%;
+}
+.row li .name{
+	margin-top: 15px;
+}
+.bigList .image{
+	width: 100%
+}

@@ -1,35 +1,30 @@
 var radioView = require('./radioView');
 
+radiosTemplate = _.template($('#radiosTemplate').html());
 
-	 radiosView = Backbone.View.extend({
-		el: $('.radios'),
+	radiosView = Backbone.View.extend({
+		el: $('.radiosContainer'),
 		template: radiosTemplate,
-		
-
-		events: {
-		    "click button.botoncito" : "filtro"
-
-		    },
 
 		initialize: function() {
-    
+			contexto = this;
 			this.render();
-			
 		},
 	    
-	    filtro: function() {
-    		console.log("this");
+	    filter: function() {
     	},
 
 	    render: function() {
-
-        	_.each(this.collection, function(num){
-            	$('.radios').append(num.name + "<br>")
-            })
-           
+	        $(this.el).html(this.template());
+            this.addAll();
 	    }, 
-
-
+    	addAll: function () {
+			_.each(this.collection, this.addOne)
+    	},
+	    addOne: function (model) { 
+	        view = new radioView({ model: model });
+	        $("ul", contexto.el).append(view.render());  
+	    },
 	});
 
 	module.exports = radiosView;
