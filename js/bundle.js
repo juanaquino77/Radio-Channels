@@ -27,7 +27,99 @@ $('.nav li').click(function(){
 })
 
 
-},{"./radioCollection":3,"./radiosView":6}],2:[function(require,module,exports){
+},{"./radioCollection":7,"./radiosView":10}],2:[function(require,module,exports){
+filterButtons = Backbone.Model.extend ({
+	
+	defaults : {
+        name : ''
+    }
+});
+
+module.exports = filterButtons;
+},{}],3:[function(require,module,exports){
+var button = require('./filterButton')
+
+buttonCollection = Backbone.Collection.extend ({
+	model : button,
+	url : 'data/buttons.json',
+	initialize : function() {
+	}
+});
+
+module.exports = buttonCollection;	
+},{"./filterButton":2}],4:[function(require,module,exports){
+var radiosView = require('./radiosView');
+var coleccion = require('./radioCollection');
+
+buttonTemplate = _.template($('#buttonTemplate').html());
+
+buttonView = Backbone.View.extend({
+	//el: $('.filter-buttons'),
+	tagName: 'li',
+   	template: buttonTemplate,
+	events: {
+	    "click .buttonName" : "filtro"
+	},
+    initialize: function(){
+    	//this.render();
+    },
+    filtro : function(){
+    	var radioCollection = new coleccion;
+		var genero = this.model.name;
+    	radioCollection.fetch()
+		.success(genero, function(data) {
+			if(genero != "all") {	
+    			var match = _.filter(data, function(arr) { 
+      				if(_.indexOf(arr.genre, genero) !== -1) 
+      					return arr
+    				});
+      			new radiosView({collection:match});
+			}
+			else
+        		new radiosView({collection:data});
+		})
+    },
+	render : function(){
+		//$(this.el).append(this.template(this.collection[0]));
+		//$(this.el).append(this.template(this.collection[2]));
+		return $(this.el).append(this.template(this.model)); 
+	}
+})
+
+module.exports = buttonView;
+},{"./radioCollection":7,"./radiosView":10}],5:[function(require,module,exports){
+var filterButtonView = require('./filterButtonView');
+var contexto;
+buttonsTemplate = _.template($('#buttonsTemplate').html());
+
+	filterButtonsView = Backbone.View.extend({
+		el: $('.filter-buttons'),
+		template: buttonsTemplate,
+
+		initialize: function() {
+			contexto = this;
+			this.render();
+		},
+	    
+	    render: function() {
+	        $(this.el).html(this.template());
+            this.addButtons();
+	    }, 
+    	addButtons: function () {
+            //this.addButton();
+			_.each(this.collection, this.addButton)
+    	},
+	    addButton: function (model) {
+            //new filterButtonView({collection: this.collection}); 
+	        buttonView = new filterButtonView({ model: model });
+	        $("ul", contexto.el).append(this.buttonView.render());  
+	    },
+	});
+
+	module.exports = filterButtonsView;
+	
+
+},{"./filterButtonView":4}],6:[function(require,module,exports){
 window.$ = require('jquery');
 window._ = require("underscore")
 window.Backbone = require('backbone');
@@ -39,7 +131,7 @@ var appRouter = new Router();
 Backbone.history.start();
 
 
-},{"./router":7,"backbone":10,"jquery":11,"underscore":12}],3:[function(require,module,exports){
+},{"./router":11,"backbone":14,"jquery":15,"underscore":16}],7:[function(require,module,exports){
 var radio = require('./radioStation')
 
 
@@ -51,7 +143,7 @@ radioCollection = Backbone.Collection.extend ({
 });
 
 module.exports = radioCollection;	
-},{"./radioStation":4}],4:[function(require,module,exports){
+},{"./radioStation":8}],8:[function(require,module,exports){
 var canciones = require('./songCollection')
 
 
@@ -65,7 +157,7 @@ radioStation = Backbone.Model.extend ({
 });
 
 module.exports = radioStation;
-},{"./songCollection":9}],5:[function(require,module,exports){
+},{"./songCollection":13}],9:[function(require,module,exports){
 radioTemplate = _.template($('#radioTemplate').html());
 
 radioView = Backbone.View.extend({
@@ -80,7 +172,7 @@ radioView = Backbone.View.extend({
 })
 
 module.exports = radioView;
-},{}],6:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var radioView = require('./radioView');
 
 radiosTemplate = _.template($('#radiosTemplate').html());
@@ -113,12 +205,15 @@ radiosTemplate = _.template($('#radiosTemplate').html());
 	module.exports = radiosView;
 	
 
-},{"./radioView":5}],7:[function(require,module,exports){
+},{"./radioView":9}],11:[function(require,module,exports){
 var coleccion = require('./radioCollection');
 var vista = require('./radiosView');
 var addClass = require("./addFixed");
+var filterButtons = require("./filterButtonCollection");
+var buttonView = require('./filterButtonView');
+var buttonsView = require('./filterButtonsView');
 var RadioChannelsList = new coleccion();
-
+var buttons = new filterButtons();
 
 Router = Backbone.Router.extend({
     	routes: {
@@ -126,7 +221,14 @@ Router = Backbone.Router.extend({
             "nuevos": "new"           
     	},
     	defaultRoute: function() {
-			RadioChannelsList.fetch()
+            buttons.fetch()
+            .success(function(data) {
+                new buttonsView({collection:data});
+            })
+            .fail( function(){
+                console.log("fail")
+            });			
+            RadioChannelsList.fetch()
 			.success(function(data) {
                 new vista({collection:data});
 	     	});
@@ -136,7 +238,7 @@ Router = Backbone.Router.extend({
         }
 })
 module.exports = Router;
-},{"./addFixed":1,"./radioCollection":3,"./radiosView":6}],8:[function(require,module,exports){
+},{"./addFixed":1,"./filterButtonCollection":3,"./filterButtonView":4,"./filterButtonsView":5,"./radioCollection":7,"./radiosView":10}],12:[function(require,module,exports){
 Song = Backbone.Model.extend ({
 
     defaults : {
@@ -146,7 +248,7 @@ Song = Backbone.Model.extend ({
 });
 
 module.exports = Song;
-},{}],9:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 var song = require('./song')
 
 
@@ -160,7 +262,7 @@ Songs = Backbone.Collection.extend ({
 module.exports = Songs;
 
 
-},{"./song":8}],10:[function(require,module,exports){
+},{"./song":12}],14:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -1770,7 +1872,7 @@ module.exports = Songs;
 
 }));
 
-},{"underscore":12}],11:[function(require,module,exports){
+},{"underscore":16}],15:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
@@ -10977,7 +11079,7 @@ return jQuery;
 
 }));
 
-},{}],12:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 //     Underscore.js 1.8.2
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -12515,4 +12617,4 @@ return jQuery;
   }
 }.call(this));
 
-},{}]},{},[2]);
+},{}]},{},[6]);

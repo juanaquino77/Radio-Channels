@@ -1,0 +1,58 @@
+[
+{
+  "id" : 1,
+  "name" : "all"
+ },
+ {
+  "id" : 2,
+  "name" : "new"
+ },
+ {
+  "id" : 3,
+  "name" : "trance"
+ },
+ {
+  "id" : 4,
+  "name" : "dance"
+ },
+ {
+  "id" : 5,
+  "name" : "house"
+ },
+  {
+  "id" : 6,
+  "name" : "lounge"
+ },
+  {
+  "id" : 7,
+  "name" : "chillout"
+ },
+  {
+  "id" : 8,
+  "name" : "techno"
+ },
+  {
+  "id" : 9,
+  "name" : "bass"
+ },
+  {
+  "id" : 10,
+  "name" : "ambient"
+ },
+  {
+  "id" : 11,
+  "name" : "deep"
+ },
+  {
+  "id" : 12,
+  "name" : "classic"
+ },
+  {
+  "id" : 13,
+  "name" : "vocal"
+ },
+  {
+  "id" : 14,
+  "name" : "hard"
+ }
+]

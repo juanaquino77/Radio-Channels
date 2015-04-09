@@ -71,21 +71,21 @@
 					<i class="mosaic glyphicon glyphicon-th-large"></i>
 				</div>
 			</nav>
-			<nav class="filter-buttons">	
-				<button type="button" class="btn btn-default all botoncito" value="all">all</button>
-				<button type="button" class="btn btn-default new botoncito" value="new">new</button>
-				<button type="button" class="botoncito btn btn-default trance" value="trance">trance</button>
-				<button type="button" class="btn btn-default dance botoncito" value="dance">dance</button>
-				<button type="button" class="btn btn-default house botoncito" value="house">house</button>
-				<button type="button" class="btn btn-default lounge botoncito" value="lounge">lounge</button>
-				<button type="button" class="btn btn-default chilout botoncito" value="chilout">chilout</button>
-				<button type="button" class="btn btn-default techno botoncito" value="techno">techno</button>
-				<button type="button" class="btn btn-default bass botoncito" value="bass">bass</button>
-				<button type="button" class="btn btn-default bass botoncito" value="ambient">ambient</button>
-				<button type="button" class="btn btn-default deep botoncito" value="deep">deep</button>
-				<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button>
-				<button type="button" class="btn btn-default vocal botoncito" value="vocal">vocal</button>
-				<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button>
+			<nav class="filter-buttons row">	
+<!-- 				<button type="button" class="btn btn-default all botoncito" value="all">all</button>
+<button type="button" class="btn btn-default new botoncito" value="new">new</button>
+<button type="button" class="botoncito btn btn-default trance" value="trance">trance</button>
+<button type="button" class="btn btn-default dance botoncito" value="dance">dance</button>
+<button type="button" class="btn btn-default house botoncito" value="house">house</button>
+<button type="button" class="btn btn-default lounge botoncito" value="lounge">lounge</button>
+<button type="button" class="btn btn-default chilout botoncito" value="chilout">chilout</button>
+<button type="button" class="btn btn-default techno botoncito" value="techno">techno</button>
+<button type="button" class="btn btn-default bass botoncito" value="bass">bass</button>
+<button type="button" class="btn btn-default bass botoncito" value="ambient">ambient</button>
+<button type="button" class="btn btn-default deep botoncito" value="deep">deep</button>
+<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button>
+<button type="button" class="btn btn-default vocal botoncito" value="vocal">vocal</button>
+<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button> -->
 			</nav>
 			<div class="radiosContainer row">	
 			</div>
@@ -95,11 +95,18 @@
 		        </ul>
 		    </script>
 		    <script type="text/template" id="radioTemplate">
-
 				<img class="image"src='img/<%= id %>.png'> </img>
 				<div class="name"><%= name %> </div>
 				<div class="playing"><%= "" %>Now Playing </div>
 		    </script>
+		    <script type="text/template" id="buttonsTemplate">
+		        <ul class="buttonsList">
+		        </ul>
+		    </script>
+			<script type="text/template" id="buttonTemplate">
+				<div class="btn btn-default buttonName "><%= name %> 
+				</div>
+	    	</script>
 		</div>
 	  </div>
 	</div>
