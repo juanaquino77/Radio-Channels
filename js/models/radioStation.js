@@ -1,5 +1,4 @@
-var canciones = require('../collections/songCollection')
-
+var canciones = require('../collections/songCollection');
 
 radioStation = Backbone.Model.extend ({
 

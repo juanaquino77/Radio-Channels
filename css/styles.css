@@ -95,39 +95,76 @@ body {
 ul{
 	list-style: none;
 }
-.row .bigList li{
+.row .bigList li {
 	float: left;
 	margin: 10px;
 	text-align: center;
 	width: 12%;
 	cursor: pointer;
 }
-.row .bigList li :hover{
+.row .bigList li :hover {
 	cursor: pointer;
 }
-.row .bigList li .name{
+.row .bigList li .name {
 	margin-top: 15px;
+	color: #fefefe;
 }
-.bigList .image{
+.row .bigList li .playing {
+	font-size: 10px;
+	color: #4a5068;
+	text-transform: uppercase;
+}
+.bigList .image {
 	width: 100%
 }
-.buttonsList li{
+.buttonsList li {
 	float: left;
-	margin-right: 10px; 
+	margin: 0 .4em .6em 0;
 }
-.row .bigList2 li{
+.row .bigList2 li {
 	float: left;
 	width: 30%;
 	background-color: #282e3f;
 	padding: 1rem;
 	margin: 0 10px 10px 0;
-	
 }
-.row .bigList2  :hover{
+.row .bigList2 :hover {
 	cursor: pointer;
 }
-.row .bigList2 li img{	
+.row .bigList2 li img {	
 	float: left;
 	margin-right: 5px;
 	width: 80px;
+}
+/*
+* For small screen 1024 x 768
+*/
+@media (max-width: 1024px) {
+	.filter-buttons .row .buttonsList li {
+		float: left;
+		margin: 0 .4em .6em 0;
+	}
+	.filter-buttons .row .btn {
+		font-size: 8px;
+		padding: .4em .5em;
+	}
+	.row .bigList li {
+	  width: 14%;
+	}
+	.name {
+		font-size: 11px;
+	}
+}
+
+/*
+* For Iphone 5 
+*/
+@media (max-width: 640px) {
+	.content{
+		border-left: 0;
+	}
+	.side{
+		display: none;
+	}
+
 }

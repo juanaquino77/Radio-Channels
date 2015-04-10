@@ -10,34 +10,13 @@ $(window).scroll(function() {
         $(".side").removeClass("fixed");
     }
 });
-/*
-$('.menu span').click(function(){
-	$('.menu span').removeClass('active');
-	$(this).addClass('active');
-})
-
-$('.views i').click(function(){
-	$('.views i').removeClass('view-active');
-	$(this).addClass('view-active');
-})
-$('.nav li').click(function(){
-	$('ul li').removeClass('nav-active');
-	$(this).addClass('nav-active');
-	return false;
-})
-
-
-$('.mosaic').click(function(){
-	alert("nada");
-})*/
 },{"./collections/radioCollection":3,"./views/radiosView":15}],2:[function(require,module,exports){
 var button = require('../models/filterButton')
 
 buttonCollection = Backbone.Collection.extend ({
 	model : button,
 	url : 'data/buttons.json',
-	initialize : function() {
-	}
+	
 });
 
 module.exports = buttonCollection;	
@@ -48,8 +27,6 @@ var radio = require('../models/radioStation')
 radioCollection = Backbone.Collection.extend ({
 	model : radio,
 	url : 'data/radios.json',
-	initialize : function() {
-	}
 });
 
 module.exports = radioCollection;	
@@ -60,8 +37,7 @@ var song = require('../models/song')
 Songs = Backbone.Collection.extend ({
 	model : song,
 	url : 'data/data.json',
-	initialize : function() {
-	}
+	
 });
 
 module.exports = Songs;
@@ -128,16 +104,9 @@ var buttons = new filterButtons();
 Router = Backbone.Router.extend({
     routes: {
         "": "defaultRoute",
-        'radiochannel/:name': 'radiochannel',
-        'mosaico': 'prueba',       
-        'compacto': 'test'       
+        'radiochannel/:name': 'radiochannel'       
     },
-    prueba: function(){
-        alert("anda");
-    },
-    test: function(){
-        alert("no anda");
-    },
+
     defaultRoute: function() {
         var gridV = new grid();
         buttons.fetch()
@@ -145,7 +114,7 @@ Router = Backbone.Router.extend({
             new buttonsView({collection:data});
         })
         .fail( function(){
-            alert("fail")
+            alert("fail");
         });         
         RadioChannelsList.fetch()
         .success(function(data) {
@@ -161,14 +130,14 @@ Router = Backbone.Router.extend({
         buttons.fetch()
         .success(function(data) {
             new buttonsView({collection:data});
-        })
+        });
         radioCollection.fetch()
         .success(genero, function(data) {
             if(genero != "all") {   
 /*  hace el filtrado de la coleccion recorriendo el arreglo de generos y devuelve otro arreglo  */
                  var match = _.filter(data, function(arr) { 
                     if(_.indexOf(arr.genre, genero) !== -1) 
-                        return arr
+                        return arr;
                     });
                 new radiosView({collection:match});
             }
@@ -259,19 +228,21 @@ gridView = Backbone.View.extend({
     },
 
     mosaic: function(){
-      var list = new coleccion();
-      list.fetch()
-      .success(function(data) {
-        var vista = new radiosView({collection: data});
-      })
+        this.changeView(radiosView);
     },
+
     compact: function(){
+        this.changeView(radiosView2);
+    },
+
+    changeView: function(view){
       var list = new coleccion();
       list.fetch()
       .success(function(data) {
-        var vista = new radiosView2({collection:data});
+        var vista = new view({collection:data});
       })
     },
+
 	 render : function(){
     $(this.el).html(''); 
 		$(this.el).append(this.template()); 
@@ -285,11 +256,11 @@ radioTemplate = _.template($('#radioTemplate').html());
 radioView = Backbone.View.extend({
 	tagName: 'li',
    	template: radioTemplate,
-    initialize: function(){
+    initialize: function() {
     	this.render();
     },
-	render : function(){
-		return $(this.el).html(this.template(this.model)) 
+	render : function() {
+		return $(this.el).html(this.template(this.model));
 	}
 })
 
@@ -314,29 +285,33 @@ var radioView = require('./radioView');
 
 radiosTemplate = _.template($('#radiosTemplate').html());
 
-	radiosView = Backbone.View.extend({
-		el: $('.radiosContainer'),
-		template: radiosTemplate,
+radiosView = Backbone.View.extend({
+	el: $('.radiosContainer'),
+	//tagName: 'ul',
 
-		initialize: function() {
-			contexto = this;
-			this.render();
-		},
-	   
-	    render: function() {
-	        $(this.el).html(this.template());
-            this.addAll();
-	    }, 
-    	addAll: function () {
-			_.each(this.collection, this.addOne)
-    	},
-	    addOne: function (model) { 
-	        view = new radioView({ model: model });
-	        $("ul", contexto.el).append(view.render());  
-	    },
-	});
+	template: radiosTemplate,
 
-	module.exports = radiosView;
+	initialize: function() {
+		contexto = this;
+		this.render();
+	},
+   
+    render: function() {
+        $(this.el).html(this.template());
+        this.addAll();
+    }, 
+
+	addAll: function () {
+		_.each(this.collection, this.addOne)
+	},
+
+    addOne: function (model) { 
+        view = new radioView({ model: model});
+        $("ul", contexto.el).append(view.render());  
+    },
+});
+
+module.exports = radiosView;
 	
 
 },{"./radioView":13}],16:[function(require,module,exports){

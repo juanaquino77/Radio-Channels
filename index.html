@@ -14,7 +14,7 @@
 	  <div class="page-wrap">
 		<nav class="side">
 			<ul class="nav nav-pills nav-stacked">
-  				<li >
+  				<li>
   					<a href="">
   						<i class="glyphicon glyphicon-list"></i>
   						<span>Menu</span>
@@ -67,13 +67,13 @@
 					<span class="all type">All<span>
 				</div>
 				<div class="views">
-
 				</div>
 			</nav>
 			<nav class="filter-buttons row">	
 			</nav>
 			<div class="radiosContainer row">	
 			</div>
+			<!-- TEMPLATES -->
 			<script type="text/template" id="gridTemplate">
 		    	<a><i href="compacto" class="compact view-active glyphicon glyphicon-th-list"></i></a>
 				<a><i href="mosaico" class="mosaic glyphicon glyphicon-th-large"></i></a>
@@ -82,20 +82,21 @@
 		        <ul class="bigList">
 
 		        </ul>
-		    </script>
+		    </script> 
 		    <script type="text/template" id="radioTemplate">
 				<img class="image"src='img/<%= id %>.png'> </img>
 				<div class="name"><%= name %> </div>
 				<div class="playing"><%= "" %>Now Playing </div>
+				<div class="song"><%= song %> </div>
 		    </script>
-			<script type="text/template" id="radiosTemplate2">
+ 			<script type="text/template" id="radiosTemplate2">
 		        <ul class="bigList2">
-
 		        </ul>
-		    </script>
+		    </script> 
 		    <script type="text/template" id="radioTemplate2">
 				<img class="image2"src='img/<%= id %>.png'> </img>
 				<div class="name2"><%= name %> </div>
+				<div class="song"><%= song %> </div>
 		    </script>		    
 		    <script type="text/template" id="buttonsTemplate">
 		        <ul class="buttonsList">

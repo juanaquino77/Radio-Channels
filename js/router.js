@@ -13,16 +13,9 @@ var buttons = new filterButtons();
 Router = Backbone.Router.extend({
     routes: {
         "": "defaultRoute",
-        'radiochannel/:name': 'radiochannel',
-        'mosaico': 'prueba',       
-        'compacto': 'test'       
+        'radiochannel/:name': 'radiochannel'       
     },
-    prueba: function(){
-        alert("anda");
-    },
-    test: function(){
-        alert("no anda");
-    },
+
     defaultRoute: function() {
         var gridV = new grid();
         buttons.fetch()
@@ -30,7 +23,7 @@ Router = Backbone.Router.extend({
             new buttonsView({collection:data});
         })
         .fail( function(){
-            alert("fail")
+            alert("fail");
         });         
         RadioChannelsList.fetch()
         .success(function(data) {
@@ -46,14 +39,14 @@ Router = Backbone.Router.extend({
         buttons.fetch()
         .success(function(data) {
             new buttonsView({collection:data});
-        })
+        });
         radioCollection.fetch()
         .success(genero, function(data) {
             if(genero != "all") {   
 /*  hace el filtrado de la coleccion recorriendo el arreglo de generos y devuelve otro arreglo  */
-                 var match = _.filter(data, function(arr) { 
+                var match = _.filter(data, function(arr) { 
                     if(_.indexOf(arr.genre, genero) !== -1) 
-                        return arr
+                        return arr;
                     });
                 new radiosView({collection:match});
             }

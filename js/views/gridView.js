@@ -9,34 +9,36 @@ gridTemplate = _.template($('#gridTemplate').html());
 
 gridView = Backbone.View.extend({
   el: $('.views'),
-   	template: gridTemplate,
+  template: gridTemplate,
 	events: {
-      "click .compact": "compact",
-	    "click .mosaic": "mosaic",
+    "click .compact": "compact",
+    "click .mosaic": "mosaic"
   },
 
-    initialize: function(){
-    	this.render();
-    },
+  initialize: function(){
+  	this.render();
+  },
 
-    mosaic: function(){
-      var list = new coleccion();
-      list.fetch()
-      .success(function(data) {
-        var vista = new radiosView({collection: data});
-      })
-    },
-    compact: function(){
-      var list = new coleccion();
-      list.fetch()
-      .success(function(data) {
-        var vista = new radiosView2({collection:data});
-      })
-    },
-	 render : function(){
+  mosaic: function(){
+      this.changeView(radiosView);
+  },
+
+  compact: function(){
+      this.changeView(radiosView2);
+  },
+
+  changeView: function(view){
+    var list = new coleccion();
+    list.fetch()
+    .success(function(data) {
+      var vista = new view({collection:data});
+    })
+  },
+
+  render : function(){
     $(this.el).html(''); 
-		$(this.el).append(this.template()); 
-	 }
-})
+	  $(this.el).append(this.template()); 
+  }
+});
 
 module.exports = gridView;

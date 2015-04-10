@@ -6,5 +6,5 @@ var Router = require('./router');
 
 
 var appRouter = new Router();
-Backbone.history.start({pushState: false});
+Backbone.history.start({pushState: true});
 
