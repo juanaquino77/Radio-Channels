@@ -119,7 +119,7 @@
 	},
 	{
 		"id" : 14,
-		"name" : "Classic Vocal Trance",
+		"name" : "Classic Vocal",
 		"frequency" : "frequency",
 		"image" : "image",
 		"description" : "description",
@@ -179,5 +179,314 @@
 		"description" : "description",
 		"genre" : ["dance", "house", "bass"],
 		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 22,
+		"name" : "depp tech",
+		"frequency" : "frequency",
+		"image" : "../img/DeepTech.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["house","techno","deep"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 22,
+		"name" : "depp tech",
+		"frequency" : "frequency",
+		"image" : "../img/DeepTech.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["house","techno","deep"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 23,
+		"name" : "disco house",
+		"frequency" : "frequency",
+		"image" : "../img/DiscoHouse.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["dance","house","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 24,
+		"name" : "downtempo lounge",
+		"frequency" : "frequency",
+		"image" : "../img/DowntempoLounge.png",
+		"description" : "Music for the spirit",
+		"genre" : ["lounge","chillout","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 25,
+		"name" : "drum 'n bass",
+		"frequency" : "frequency",
+		"image" : "../img/Drum'nBass.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["bass"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 26,
+		"name" : "drumstep",
+		"frequency" : "frequency",
+		"image" : "../img/Drumstep.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["new","bass"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 27,
+		"name" : "dub",
+		"frequency" : "frequency",
+		"image" : "../img/Dub.png",
+		"description" : "Music for the spirit",
+		"genre" : ["new","bass","deep"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 28,
+		"name" : "dubstep",
+		"frequency" : "frequency",
+		"image" : "../img/Dubstep.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["bass","hard"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 29,
+		"name" : "ebm",
+		"frequency" : "frequency",
+		"image" : "../img/EBM.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["classic"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 30,
+		"name" : "electronica",
+		"frequency" : "frequency",
+		"image" : "../img/Electronica.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["lounge","chillout","bass","ambient"],
+		"dateCreate" : "dateCreate"
+
+	},
+{
+		"id" : 31,
+		"name" : "electro house",
+		"frequency" : "frequency",
+		"image" : "../img/ElectroHouse.png",
+		"description" : "the best music of the 00's",
+		"genre" : ["house","dance"],
+		"dateCreate" : "dateCreate"
+	},
+	{
+		"id" : 32,
+		"name" : "electronics pioneers",
+		"frequency" : "frequency",
+		"image" : "../img/ElectronicsPioneers.png",
+		"description" : "Music for the spirit",
+		"genre" : ["techno","ambient","chillout","classic"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 33,
+		"name" : "electronics",
+		"frequency" : "frequency",
+		"image" : "../img/Electronics.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["new","techno","ambient","classic"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 34,
+		"name" : "electropop",
+		"frequency" : "frequency",
+		"image" : "../img/Electropop.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["dance","house"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 35,
+		"name" : "epic trance",
+		"frequency" : "frequency",
+		"image" : "../img/EpicTrance.png",
+		"description" : "Music for the spirit",
+		"genre" : ["trance","dance","classic","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 36,
+		"name" : "future garage",
+		"frequency" : "frequency",
+		"image" : "../img/FutureGarage.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["lounge","chillout","bass","ambient"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 37,
+		"name" : "hands up",
+		"frequency" : "frequency",
+		"image" : "../img/HandsUp.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["trance","dance","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 38,
+		"name" : "hard techno",
+		"frequency" : "frequency",
+		"image" : "../img/HardTechno.png",
+		"description" : "Music for the spirit",
+		"genre" : ["techno","hard"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 39,
+		"name" : "hardcore",
+		"frequency" : "frequency",
+		"image" : "../img/Hardcore.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["hard"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 40,
+		"name" : "house",
+		"frequency" : "frequency",
+		"image" : "../img/House.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["house"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 41,
+		"name" : "jungle",
+		"frequency" : "frequency",
+		"image" : "../img/Jungle.png",
+		"description" : "Music for the spirit",
+		"genre" : ["bass","classic","hard"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 42,
+		"name" : "lounge",
+		"frequency" : "frequency",
+		"image" : "../img/Lounge.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["lounge","chillout"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 43,
+		"name" : "minimal",
+		"frequency" : "frequency",
+		"image" : "../img/Minimal.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["techno"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 44,
+		"name" : "nightcore",
+		"frequency" : "frequency",
+		"image" : "../img/Nightcore.png",
+		"description" : "Music for the spirit",
+		"genre" : ["dance","hard","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 45,
+		"name" : "nu disco",
+		"frequency" : "frequency",
+		"image" : "../img/NuDisco.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["dance","house","lounge","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 46,
+		"name" : "techno",
+		"frequency" : "frequency",
+		"image" : "../img/Techno.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["techno","hard"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 47,
+		"name" : "trance",
+		"frequency" : "frequency",
+		"image" : "../img/Trance.png",
+		"description" : "Music for the spirit",
+		"genre" : ["trance","dance"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 48,
+		"name" : "trap",
+		"frequency" : "frequency",
+		"image" : "../img/Trap.png",
+		"description" : "I have no idea what it is",
+		"genre" : ["bass","hard"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 49,
+		"name" : "vocal chillout",
+		"frequency" : "frequency",
+		"image" : "../img/VocalChillout.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["chillout","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 50,
+		"name" : "vocal lounge",
+		"frequency" : "frequency",
+		"image" : "../img/VocalLounge.png",
+		"description" : "rest in the couch and chillout music",
+		"genre" : ["lounge","vocal"],
+		"dateCreate" : "dateCreate"
+
+	},
+	{
+		"id" : 52,
+		"name" : "funky house",
+		"frequency" : "frequency",
+		"image" : "../img/FunkyHouse.png",
+		"description" : "Music for the spirit",
+		"genre" : ["house","lounge","vocal"],
+		"dateCreate" : "dateCreate"
+
 	}
 ]

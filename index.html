@@ -67,28 +67,17 @@
 					<span class="all type">All<span>
 				</div>
 				<div class="views">
-					<i class="compact view-active glyphicon glyphicon-th-list"></i>
-					<i class="mosaic glyphicon glyphicon-th-large"></i>
+
 				</div>
 			</nav>
 			<nav class="filter-buttons row">	
-<!-- 				<button type="button" class="btn btn-default all botoncito" value="all">all</button>
-<button type="button" class="btn btn-default new botoncito" value="new">new</button>
-<button type="button" class="botoncito btn btn-default trance" value="trance">trance</button>
-<button type="button" class="btn btn-default dance botoncito" value="dance">dance</button>
-<button type="button" class="btn btn-default house botoncito" value="house">house</button>
-<button type="button" class="btn btn-default lounge botoncito" value="lounge">lounge</button>
-<button type="button" class="btn btn-default chilout botoncito" value="chilout">chilout</button>
-<button type="button" class="btn btn-default techno botoncito" value="techno">techno</button>
-<button type="button" class="btn btn-default bass botoncito" value="bass">bass</button>
-<button type="button" class="btn btn-default bass botoncito" value="ambient">ambient</button>
-<button type="button" class="btn btn-default deep botoncito" value="deep">deep</button>
-<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button>
-<button type="button" class="btn btn-default vocal botoncito" value="vocal">vocal</button>
-<button type="button" class="btn btn-default hard botoncito" value="hard">hard</button> -->
 			</nav>
 			<div class="radiosContainer row">	
 			</div>
+			<script type="text/template" id="gridTemplate">
+		    	<a><i href="compacto" class="compact view-active glyphicon glyphicon-th-list"></i></a>
+				<a><i href="mosaico" class="mosaic glyphicon glyphicon-th-large"></i></a>
+		    </script>
 			<script type="text/template" id="radiosTemplate">
 		        <ul class="bigList">
 
@@ -99,6 +88,15 @@
 				<div class="name"><%= name %> </div>
 				<div class="playing"><%= "" %>Now Playing </div>
 		    </script>
+			<script type="text/template" id="radiosTemplate2">
+		        <ul class="bigList2">
+
+		        </ul>
+		    </script>
+		    <script type="text/template" id="radioTemplate2">
+				<img class="image2"src='img/<%= id %>.png'> </img>
+				<div class="name2"><%= name %> </div>
+		    </script>		    
 		    <script type="text/template" id="buttonsTemplate">
 		        <ul class="buttonsList">
 		        </ul>

@@ -100,6 +100,10 @@ ul{
 	margin: 10px;
 	text-align: center;
 	width: 12%;
+	cursor: pointer;
+}
+.row .bigList li :hover{
+	cursor: pointer;
 }
 .row .bigList li .name{
 	margin-top: 15px;
@@ -110,4 +114,20 @@ ul{
 .buttonsList li{
 	float: left;
 	margin-right: 10px; 
+}
+.row .bigList2 li{
+	float: left;
+	width: 30%;
+	background-color: #282e3f;
+	padding: 1rem;
+	margin: 0 10px 10px 0;
+	
+}
+.row .bigList2  :hover{
+	cursor: pointer;
+}
+.row .bigList2 li img{	
+	float: left;
+	margin-right: 5px;
+	width: 80px;
 }

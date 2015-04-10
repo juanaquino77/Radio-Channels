@@ -1,5 +1,5 @@
-var coleccion = require('./radioCollection');
-var vista = require('./radiosView');
+var coleccion = require('./collections/radioCollection');
+var vista = require('./views/radiosView');
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
     if (scroll >= 64) {
@@ -9,7 +9,7 @@ $(window).scroll(function() {
         $(".side").removeClass("fixed");
     }
 });
-
+/*
 $('.menu span').click(function(){
 	$('.menu span').removeClass('active');
 	$(this).addClass('active');
@@ -25,3 +25,7 @@ $('.nav li').click(function(){
 	return false;
 })
 
+
+$('.mosaic').click(function(){
+	alert("nada");
+})*/
